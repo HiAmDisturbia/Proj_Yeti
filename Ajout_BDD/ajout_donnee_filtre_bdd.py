@@ -1,30 +1,40 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on %(date)s
-
-@author: %(username)s
+Ce programme a été réalisé dans le but de créer un outil d'analyse du serveur yeti.
+Ce fichier permet d'ajouter les données filtrées et fusionnées à la base de donnée nommé bdlog.
 """
 
-import re
 import psycopg2
 import ast
 
-
 def creation_bdd(file):
+    
+    """
+    Cette fonction permet d'ajouter les données filtrées et fusionnées à la base de donnée.
+    Elle prends en paramètre un fichier où les données access et error sont fusionnées.
+    """  
+    
+    #pour le reste du programme, con permettera de dialoguer avec la base de données
+    
     con=psycopg2.connect(database='postgres',
                       user='postgres',
                       host='localhost',
                       password='postgres',
                       port='5432')
     
+    #lecture du fichier de données à ajouter à la base de données
+
     fichier=open(file,'r')
     
     lu=[]
-    for i in fichier :
-        """convertion de la liste type string en liste type list"""
-        doc=ast.literal_eval(i)
 
+    #Dans un premier temps, on convertit la liste de type string en liste de type list.
+    #Dans un second temps on extrait les coordonnées des points, on les transforme en float,
+    #puis on les stocke chacun dans une liste.
+    #Enfin on stocke toutes les données des fichiers dans une liste.
+    
+    for i in fichier:
+        doc=ast.literal_eval(i)
         l=[]
         x1=float(doc[4])
         y1=float(doc[5])
@@ -34,7 +44,12 @@ def creation_bdd(file):
         t2=[x2,y2]
         li=[doc[0],doc[1],doc[2],doc[3],doc[8],doc[9],doc[10],doc[11],doc[12],doc[13],doc[14],doc[15],doc[16],t1,t2]
         l.append(li)
-        lu.append(l[0])
+        lu.append(l[0])   
+    
+    #On ajoute les données à la base de données. Pour les points qui sont sous format géométrique,
+    #à l'aide de postgis, il faut utilisé la commande ST_MakePoint() qui permet de définir que la   
+    #géométrie est un point, de coordonées (x, y).
+    
     with con:
         cur=con.cursor() 
         for i in lu:
@@ -46,7 +61,3 @@ def creation_bdd(file):
         cur.close()  
         con.commit()
         print('Ajout de données sur la base de données bdlog')
-
-#fusion='log/fusion_petit'
-#test='log/fusion/fusion.log'
-#print(creation_bdd(test,'creation_structure_bdd'))
