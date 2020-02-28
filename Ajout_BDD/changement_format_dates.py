@@ -1,23 +1,31 @@
-import numpy as np
-import gpstime as g
+# -*- coding: utf-8 -*-
+"""
+Ce programme a été réalisé dans le but de créer un outil d'analyse du serveur Yéti, et permet de changer le format de date du fichier access.log.
+"""
+
 import os
 import re
 import datetime as dt
 import locale
-"""
-https://stackoverflow.com/questions/955986/what-is-the-correct-way-to-set-pythons-locale-on-windows
-Etape importante, car il nous faut lire les nom des mois en anglais, et non en français
-Donc ici on change de locale pour lire les strings.
-"""
+
+#https://stackoverflow.com/questions/955986/what-is-the-correct-way-to-set-pythons-locale-on-windows
+#Etape importante, car il nous faut lire les nom des mois en anglais, et non en français! Donc ici on change de locale pour lire les strings.
+
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+
 def replace_date(file, name):
+    """
+    Fonction qui prend en entrée un string de l'emplacement du fichier, et un string pour donner un nom au nouveau .log créé, et retourne le string de l'emplacement du nouveau fichier.
+    
+    Cette fonction remplace le format de date du fichier access.log par celui du fichier erreur.log
+    """
+    
     output_filename = os.path.normpath("log/changement_date/"+name+".log")
     with open(output_filename, "w") as out_file:
         out_file.write("")
     
-    """
-    Ici on lit notre fichier, et dans la nouvelle liste, on lui insère les dates.
-    """
+    #Ici on lit notre fichier, et dans la nouvelle liste, on lui insère les dates.
+    
     lst_date = []
 
     with open(file, "r") as in_file:
@@ -26,28 +34,14 @@ def replace_date(file, name):
             result = expression_regex.findall(line)
             lst_date.append(result[0])
                 
-
-    """
-    Remerciements à locale pour la lecture des formats de dates. C'est ici que l'on modifie
-    le format de date, en premièrement récupérant le sien, puis on le transforme en celui 
-    recherché, qui correspond à celui de Error.
-    """
     l = []
     for e in lst_date:
         val = dt.datetime.strptime(e, "%d/%b/%Y")
         chgt_date = val.strftime("%Y/%m/%d")
         l.append(chgt_date)
-    
-    """
-    IMPORTANT: Le fichier et la liste des dates contiennent le même nombre d'élements, ce qui nous
-    aidera pour créer la boucle dans la fonction replace_date.
-    """
 
-    """
-    Le compteur est nécessaire pour passer par tous les élements de la liste. On va re-créé un
-    fichier log, afin d'avoir les logs d'accès avec le nouveau format de date.
-    Pas besoin de retourner quoi que ce soit, étant donné que l'on les mets dans un fichier.
-    """
+    #Le compteur est nécessaire pour passer par tous les élements de la liste.
+    
     cpt = 0
     
     with open(output_filename, "a") as out_file:
