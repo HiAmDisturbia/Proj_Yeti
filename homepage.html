@@ -1,0 +1,53 @@
+<!--Ce code a été réalisé dans le but de créer un outil d'analyse du serveur Yéti. Il affiche la page principal de l'outil, et permet d'envoyer des requêtes sur la même page, et ainsi d'afficher les statistiques et la carte.-->
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Outil d'analyse du serveur yeti </title>
+    <meta name="description" content="Ce site vous présente des analyses sur la clientèle du serveur yeti">
+    <link rel="stylesheet"  type='text/css' href="{{ url_for('static', filename='css/style_interface.css') }}">
+   <!--Importation de la librairie ajax-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="entete">
+          <h1>Outil d'analyse du serveur yeti</h1>
+        </div>
+    <div id="description">
+          <p>
+            Ce site web a été réalisé dans le cadre d'un projet à l'ENSG. Ce dernier consistait à réaliser un
+            outil d'analyse de la clientèle du serveur yeti pour que les administrateurs puissent améliorer leurs site.
+          </p>
+          <p>
+            Ce site permet de visualiser une carte de chaleur des zones les
+            plus demandées par les utilisateurs ainsi que plusieurs staistiques à partir d'un fichier donné.
+            La carte de chaleur permet d'observer si une zones géographique en particulier présente des problèmes.
+            Les staistiques permettents d'observer les types d'erreur les plus répendu.
+          </p>
+        </div>
+    <div id="bdd">
+        <form id="date" method="post">
+          <!--L'utilisateur saisit les données dans les deux champs de type texte, et ensuite envoie en cliquant sur le bouton 'submit'.-->
+          <p>
+            <br>L'analyse des fichiers se fait</br>
+            <br>du<input type="text" class="bouton-date" name='debut' placeholder=yyyy/mm/dd></br>
+            <br>au<input type="text" class="bouton-date" name='fin' placeholder=yyyy/mm/dd></br>
+            <br><input type="submit" class="save" id="sauve" name="sauver" value='Sauvegarder' onclick="myFunction()"></br>
+          </p>
+        </form>
+    </div>
+    <br></br>
+    <div id="choix">
+      <!--L'un affiche les statistiques, l'autre la carte. Les deux balises, lorsque cliquée, renvoie l'utilisateur vers une autre page.-->
+      <a href='stat'><input class="bouton-stat" type="submit" value="statistiques"></a>
+      <a href='carte'><input class="bouton-carte" type="submit" value="carte de chaleur"></a>
+    </div>
+    <div id="pied-page">
+          <p>
+            Les créateurs de ce site web sont Nasr Paul-Alexandre, Helstroffer Clément et Rouvière Jason.
+          </p>
+    </div>
+    <script src="{{ url_for('static', filename='js/testeru.js') }}" charset="utf-8"></script>
+  </body>
+</html>
