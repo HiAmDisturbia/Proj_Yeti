@@ -1,28 +1,23 @@
-import numpy as np
-import gpstime as g
+# -*- coding: utf-8 -*-
+"""
+Ce programme a été réalisé dans le but de créer un outil d'analyse du serveur Yéti, et permet de sélectionner les lignes qui nous intéresse.
+"""
+
 import os
 import re
-"""import matplotlib.pyplot as plt
-from datetime import datetime
-from io import StringIO
-import csv"""
 
-tic = g.gpstime()
-
-"""
-Sites qui m'ont servi à comprendre le code:
-https://codehangar.io/smiple-log-and-file-processing-in-python/
-https://docs.python.org/2.7/howto/regex.html
-"""
 def filtrer (fichier, name):
+    """
+    Fonction qui prend en entrée un string de l'emplacement du fichier, et un string pour donner un nom au nouveau .log créé, et retourne le string de l'emplacement du nouveau fichier.
     
-    # Regex est utilisé our extraire lesl ignes qui nous intéresse, ici identifier=Yeti
+    Cette fonction permet de choisir, grâce au regex, les lignes qui nous intéresse.
+    """
     ligne_regex = re.compile(r"GET /wps")
     ligne_regex2 = re.compile(r"identifier=Yeti")
     
     # On ajoutera les lignes sélectionnés dans un nouveau fichier.
     output_filename = os.path.normpath("log/log_filtres/"+name+".log")
-    # Réécris le fichier, ce qui permet de débuter avec un fichier vide.
+    
     with open(output_filename, "w") as out_file:
         out_file.write("")
     
