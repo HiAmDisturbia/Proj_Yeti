@@ -62,7 +62,7 @@ Il est conseillé de créer un environnement virtuel, avant d'installer flask:
 sudo apt install python3-venv
 ```
 
-Ensuite on le créer. Pour ça, il faut veiller à choisir le dossier sur lequel on travaille, avec la commande ```cd .../nom_du_dossier```:
+Ensuite on le créer. Pour ça, il faut veiller à choisir le dossier sur lequel on travaille, avec la commande ```cd .../nom_du_dossier```. Exemple:
 ```
 python3 -m venv env
 ```
