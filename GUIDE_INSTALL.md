@@ -15,10 +15,10 @@ _Il est nécessaire de l'installer pour pouvoir envoyer des requêtes vers le se
 
 Installation:
 ```
-#1ère méthode
+#1
 sudo apt-get install python3-Psycopg2
 
-#2ème méthode
+#2
 sudo pip3 install Psycopg2
 #Dans les cas où pip3 n'est pas installé: 
 sudo apt-get install python3-pip  
