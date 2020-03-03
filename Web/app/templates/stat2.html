@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Statistiques</title>
+    <meta name="description" content="Ce site vous présente des analyses sur la clientèle du serveur yeti">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_stat.css') }}">
+  </head>
+
+  <body>
+    <div id="entete">
+      <h1>Statistiques</h1>
+    </div>
+    <div id="contenu">
+      <div id="barre_g">
+      </div>
+      <div id="description">
+        <h2>Description</h2>
+          <br>Les diagrammes affichés sont calculés à partir de la sélection que vous avez faite en écrivant les deux dates sur la page d’accueil.</br>
+          <br>Le premier diagramme permet d'observer la proportion de requête échouées par rapport à celles qui ont réussi.</br>
+          <br>Le second permet de voir quelles sont les erreurs dominantes.</br>
+      </div>
+      <div id='graph'>
+      <img id='stat-graph'src="{{ url_for('static', filename='graph.png') }}" alt="" title="graph des types d'erreur" />
+      <img id='proportion' src="{{ url_for('static', filename='stat.png') }}"/>
+      <div id="séparateur">
+      </div>
+    </div>
+  </body>
+</html>
