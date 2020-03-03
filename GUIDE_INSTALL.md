@@ -1,6 +1,10 @@
 # Guide d'installation
+---------------------------------
 
-Avant toute installation de bilbiothèques, il faut vérifier la version du système Ubuntu.
+Sur le terminal, lancer ```install.sh```, qui lance les lignes de codes pour installer les librairies nécessaires. Ensuite lancer ```install_flask.sh```. Si cela ne marche pas, suivez le guide d'installation ci-dessous.
+
+---------------------------------
+Avant toute installation de bibliothèques, il faut vérifier la version du système Ubuntu.
 ```
 sudo apt update
 ```
