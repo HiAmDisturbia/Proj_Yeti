@@ -1,0 +1,64 @@
+
+h1{
+  position: absolute;
+  left:0px;
+  color: #FF9200;
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+  z-index: 2;
+}
+
+#barre_g {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 25%;
+   height: 1000px;
+   background: #EAEAEA;
+}
+
+#description{
+  position:absolute;
+  top: 100px;
+  width: 25%;
+}
+
+#error{
+      display: block;
+      float: right;
+      height:900px;
+      width: 70%;
+      margin: auto;
+      border: solid 2px black;
+      border radius: 20px 20px 20px 20px;
+      background: white;
+      border-radius: 10px;
+}
+
+#séparateur{
+  display: block;
+  float: right;
+  height: 10px;
+  width:70%;
+  background: white;
+}
+
+#map {position:absolute;top:0;bottom:0;right:0;left:0;}
+
+#map_fd1d41a80c154d2e89f8bae44def3db7 {
+      position: relative;
+      width: 100.0%;
+      height: 100.0%;
+      left: 0.0%;
+      top: 0.0%;
+}
+/* safari */ /* chrome */ /* firefox */ /* opera *//* ie */
+.leaflet-image-layer {
+
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor;
+}

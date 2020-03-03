@@ -1,0 +1,50 @@
+h1{
+  position: absolute;
+  left:0px;
+  color: #FF9200;
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+  z-index: 2;
+}
+
+#barre_g {
+   position: absolute;
+   bottom: 0;
+   top: 0;
+   left: 0;
+   width: 25%;
+   background: #EAEAEA;
+}
+
+#description{
+  position:absolute;
+  top: 100px;
+  width: 25%;
+}
+
+#graph{
+  display: block;
+  width: 70%;
+  float: right;
+}
+#stat-graph{
+  display: block;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+#proportion{
+  display: block;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#séparateur{
+  display: block;
+  float: right;
+  height: 10px;
+  width:70%;
+  background: white;
+  }
