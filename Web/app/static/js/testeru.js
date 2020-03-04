@@ -14,12 +14,8 @@ function myFunction() {
   /*Si les deux tests sont réussis, ie: test1 == test2*/
   if (exp_regex.test(x) && exp_regex.test(y))
   {
-    return (x, y);
   } else {
     alert("Format de date saisie invalide");
-    x = "None";
-    y = "None";
-    return (x, y);
   };
 }
 // click sur le bouton sauver
