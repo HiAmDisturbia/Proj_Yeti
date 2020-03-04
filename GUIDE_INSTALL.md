@@ -1,7 +1,7 @@
 # Guide d'installation
 ---------------------------------
 
-Sur le terminal, lancer ```install.sh```, qui lance les lignes de codes pour installer les librairies nécessaires. Ensuite lancer ```install_flask.sh```. Si cela ne marche pas, suivez le guide d'installation ci-dessous.
+Avant de lancer quelconque fichier Shell, clique droit, puis Propriétés, et cochez Autoriser le fichier à s'exécuter comme un programme. Lancer ```install.sh```, qui lance les lignes de codes pour installer les librairies nécessaires. Ensuite lancer ```install_flask.sh```. Si cela ne marche pas, suivez le guide d'installation ci-dessous.
 
 ---------------------------------
 Avant toute installation de bibliothèques, il faut vérifier la version du système Ubuntu.
