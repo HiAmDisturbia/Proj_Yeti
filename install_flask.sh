@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install python3-venv
-cd Web
+cd web
 python3 -m venv env 
 source env/bin/activate
 pip3 install Flask
