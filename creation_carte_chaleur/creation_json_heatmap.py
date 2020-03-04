@@ -96,6 +96,7 @@ def creation_points():
         data.append(pts)
         c5+=1
     
+    #Pensez à modifier l'emplacement du fichier selon où la totalité du projet a été placée.
     with open('/web/app/static/app1.json', 'w') as json_file:
         json.dump(data, json_file)
         
