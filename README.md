@@ -1,2 +1,2 @@
 # Proj_Yeti
-Projet réalisé en équipe de 3.
+Par Paul-Alexandre Nasr, Jason Rouvière, Clément Helstroffer
