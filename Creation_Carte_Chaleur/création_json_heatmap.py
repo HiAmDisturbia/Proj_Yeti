@@ -96,7 +96,7 @@ def creation_points():
         data.append(pts)
         c5+=1
     
-    with open('/home/formation/Documents/projinfo/final/web/app/static/app1.json', 'w') as json_file:
+    with open('/web/app/static/app1.json', 'w') as json_file:
         json.dump(data, json_file)
         
     #print(p_hd,p_bg)    
