@@ -16,7 +16,7 @@ def filtrer (fichier, name):
     ligne_regex2 = re.compile(r"identifier=Yeti")
     
     # On ajoutera les lignes sélectionnés dans un nouveau fichier.
-    output_filename = os.path.normpath("log/log_filtres/"+name+".log")
+    output_filename = os.path.normpath("fichiers_creer/"+name+".log")
     
     with open(output_filename, "w") as out_file:
         out_file.write("")

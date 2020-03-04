@@ -20,7 +20,7 @@ def replace_date(file, name):
     Cette fonction remplace le format de date du fichier access.log par celui du fichier erreur.log
     """
     
-    output_filename = os.path.normpath("log/changement_date/"+name+".log")
+    output_filename = os.path.normpath("fichiers_creer/"+name+".log")
     with open(output_filename, "w") as out_file:
         out_file.write("")
     

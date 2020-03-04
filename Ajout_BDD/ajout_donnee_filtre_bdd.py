@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Ce programme a été réalisé dans le but de créer un outil d'analyse du serveur yeti.

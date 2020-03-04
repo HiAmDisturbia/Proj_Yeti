@@ -10,9 +10,9 @@ def fusion(file1, file2):
     """
     Fonction qui prend en entrée deux fichiers, et renvoie un String qui indique l'emplacement du fichier créé dans l'explorateur de fichiers.
     
-    Cette fonction rassemble les paramètres des deux fichiers en un seul, en fonction des dates et heures.
+    Cette fonction rassemble les paramètres des deux fichiers en un seul.
     """
-    output_filename = os.path.normpath("log/fusion/fusion.log")
+    output_filename = os.path.normpath("fichiers_creer/fusion.log")
     with open(output_filename, "w") as out_file:
         out_file.write("")
         

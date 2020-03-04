@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Ce programme a été réalisé dans le but de créer un outil d'analyse du serveur Yéti.
-Ce fichier permet de créer la structure de la base de donnée nommé bdlog.
-"""
+Ce programme a été réalisé dans le but de créer un outil d'analyse du serveur yeti.
+Ce fichier permet de créer la structure de la base de donnée nommé bdlog"""
 
 import psycopg2
 
-#pour le reste du programme, con permettera de dialoguer avec la base de données
+#pour le reste du programme con permettera de dialoguer avec la base de donnée
 
 con=psycopg2.connect(database='postgres',
                       user='postgres',
@@ -15,14 +14,16 @@ con=psycopg2.connect(database='postgres',
                       port='5432')
     
 
-#Création de toutes les colonnes qui permettront de stocker les données ajoutées.
-#On spécifie le type des données en tant que chaîne de caractères, pour la plus part.
+#Creation de toutes les colonnes qui pêrmetteront de stockés les données ajoutées.*
+#On spécifie le type des données VARCHAR(20) pour la plus part.
 #Cependant il y a trois exceptions:
-#    - Pour la rose des vents, on a mis VARCHAR(50), car certaines requêtes contiennent plus de 20 caractères
-#      sur cette donnée.
-#    - Pour les messages d'erreur, on a mis VARCHAR(200), car ces informations ont plus de caractères que les autres.
-#    - Pour les points bas gauche et haut droit, on les a créé au format postgis, afin que lors des futurs traitements,
-#      l'extraction de ces données soient plus simple.
+#    - pour la rose des vents on a mis VARCHAR(50) car certaine requete contienne plus de 20 charactères 
+#      sur cette donnée
+#      
+#    - pour les messages d'erreur on amis VARCHAR(200) car ces informations ont plus de charactères car les autres
+#    
+#    - pour les points bas gauche et haut droit on les a créer au format postgis afin que lors des futurs traitements
+#      l'esxtraction de ces données soient plus simple
 
 with con:
     cur=con.cursor()  
