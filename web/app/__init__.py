@@ -61,9 +61,9 @@ def create_app():
                         liste_type_erreur.append(int(type_erreur))
                         if not type_erreur in dict_cpt:
                             dict_cpt[type_erreur] = 0
-                    else:
-                        cpt_bon+=1    
-                        dict_cpt[type_erreur] += 1
+                        else:
+                            cpt_bon+=1    
+                            dict_cpt[type_erreur] += 1
                 
                 #On trie le dictionnaire en ordre décroissant, par rapport aux valeurs.
                 
@@ -92,6 +92,9 @@ def create_app():
                 plt.pie(valeur_erreur, labels=nom_erreur, colors=colors, 
                         autopct='%1.1f%%', shadow=True, startangle=90)
                 plt.axis('equal')
+               
+               #Pensez à changer l'emplacement du fichier, qui doit se situer dans 'web/app/static/app1.json' du projet.
+               
                 plt.savefig('/home/formation/Documents/projinfo/final/web/app/static/graph.png')
             
             #Réaliosation du diagramme permettant d'observer le pourcentage d'erreur et de réussite
@@ -104,6 +107,9 @@ def create_app():
             plt.pie(l, labels=nom, colors=colors, 
                     autopct='%1.1f%%', shadow=True, startangle=90)
             plt.axis('equal')
+            
+            #Pensez à changer l'emplacement du fichier, qui doit se situer dans 'web/app/static/app1.json' du projet.
+            
             plt.savefig('/home/formation/Documents/projinfo/final/web/app/static/stat.png')
                 
 
