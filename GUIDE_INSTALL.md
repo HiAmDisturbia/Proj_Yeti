@@ -48,14 +48,14 @@ On ajoute à l'utilisateur la possibilité de se connecter via mdp:
 ALTER USER postgres WITH PASSWORD 'postgres';
 ```
 
-Quitter la connexion SQL et la session 'postgres':
-```
-Ctrl+D #Appuyer 2 fois pour quitter la session postgres
-```
-
 Il faut ajouter l'extension géographique à la base de données:
 ```
 CREATE EXTENSION postgis; #A lancer cette commande pendant la connection SQL
+```
+
+Quitter la connexion SQL et la session 'postgres':
+```
+Ctrl+D #Appuyer 2 fois pour quitter la session postgres
 ```
 
 ## flask
