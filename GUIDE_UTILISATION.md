@@ -18,7 +18,8 @@ Pour les connexions à la base de données:
 
 ### Exécution des scripts Python
 
-Saisir les fichiers access.log et error.log dans le script "ajout_donnees_a_bdd.py" pour filtrer les fichiers logs, et les ajouter à la base de données.
+Executer une seul fois le script "creation_structure_bdd.py".
+Saisir les fichiers access.log et error.log dans le script "ajout_donnees_a_bdd.py" puis l'executer.
 Ensuite, exécuter "création_json_heatmap.py" pour créer la carte de chaleur.
 Enfin, lancer "run.sh" pour lancer les scripts flask pour afficher la page web.
 
