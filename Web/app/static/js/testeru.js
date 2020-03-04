@@ -1,5 +1,3 @@
-
-
 function myFunction() {
   /*Le retour du regex, mais cette fois on est sur javascript.
   Ensuite on sélectionne les valeurs des deux div (bouton) du fichier html.*/
