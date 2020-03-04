@@ -12,4 +12,6 @@ Enfin, lancer "\_\_init__.py" pour créer les statistiques, ainsi qu'afficher la
 
 ## Utilisation de la page web
 
-Saisir le fichier log dans le bouton "Ajouter à la base de données"
+(?)Saisir le fichier log dans le bouton "Ajouter à la base de données".
+Saisir les dates souhaitées dans les zones de texte.
+Enfin, vous pouvez visualiser les résultats en cliquant sur "Statistiques" et "Carte de chaleur".
